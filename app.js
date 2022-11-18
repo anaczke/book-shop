@@ -11,9 +11,13 @@ let title = document.createElement('div');
 title.innerHTML = "<h1>Amazing Bookshop Online</h1>";
 header.append(title);
 
+let innerWrapper = document.createElement('div');
+innerWrapper.setAttribute('id','innerWrapper');
+wrapper.append(innerWrapper);
+
 let bookcatalog = document.createElement('div');
 bookcatalog.setAttribute('id','bookcatalog');
-wrapper.append(bookcatalog);
+innerWrapper.append(bookcatalog);
 
 let catTitle = document.createElement('h3');
 catTitle.setAttribute('class', 'midTitle');
@@ -48,7 +52,7 @@ fetch('./books.json')
                                  ${book.description}
                                  <p class='showLess'>Show less...</p>
                                  </div>
-                                <button class='addToCart'>Add to chart</button>
+                                <button class='addToOrder'>Order</button>
                             </div>
                               `;
 
@@ -70,3 +74,49 @@ const hideDescription = e =>{
     target.parentElement.setAttribute('hidden','hidden');
 }
 bookList.addEventListener('click', hideDescription);
+
+//order books
+let cart = document.createElement('div');
+cart.setAttribute('id','cart');
+innerWrapper.append(cart);
+
+let cartTitle = document.createElement('h3');
+cartTitle.setAttribute('class', 'midTitle');
+cartTitle.textContent = 'Order Books';
+cart.append(cartTitle);
+
+let buttons = document.getElementsByTagName('button');
+
+
+const addToOrder = e => {
+    let target = e.target;
+    if(target.className != 'addToOrder') return;
+    let cloneBook = target.parentElement.parentElement.cloneNode(true);
+    cart.append(cloneBook);
+    target.parentElement.parentElement.style.borderLeftWidth = "10px";
+    target.parentElement.parentElement.style.backgroundColor = "lightgrey";
+    e.target.disabled = 'true';
+
+    let closeBtn = document.createElement('button');
+    closeBtn.textContent= 'X';
+    closeBtn.setAttribute('class','delFromOrder');
+    cloneBook.append(closeBtn);
+
+    cloneBook.style.justifyContent = 'space-between'
+};
+bookList.addEventListener('click', addToOrder);
+
+const delFromOrder = e =>{
+    let target = e.target;
+    if(target.className != 'delFromOrder') return;
+    target.parentElement.remove()
+}
+//może jest jakieś odwracanie działąnia funkcji??? np. addToOrder revert
+
+cart.addEventListener('click', delFromOrder);
+
+let confBtn = document.createElement('button');
+confBtn.textContent = 'Confirm Order';
+confBtn.setAttribute('id','confBtn');
+cart.append(confBtn);
+
