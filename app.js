@@ -31,8 +31,6 @@ fetch('./books.json')
         .then(response => {
             return response.json();
         })
-
-
                     .then(data => {data?.forEach( book => {
                         let booka = document.createElement('div');
                             booka.setAttribute('class','book');
@@ -44,13 +42,31 @@ fetch('./books.json')
                             <div>
                                 <p><span> author:</span> ${book.author}</p>
                                 <p><span>title:</span>  ${book.title}</p>
-                                <p><span>description:</span>  ${book.description}</p>
                                 <p><span>price:</span>  ${book.price} eur</p>
+                                <button class='showMore'>Show more</button>
+                                <div class='description' hidden>
+                                 ${book.description}
+                                 <p class='showLess'>Show less...</p>
+                                 </div>
+                                <button class='addToCart'>Add to chart</button>
                             </div>
                               `;
 
                             books.append(booka);
                             })});
 
+const bookList = document.getElementById('bookList');
 
+const showDescription = e => {
+    let target = e.target;
+    if(target.className != 'showMore') return;
+    target.nextElementSibling.removeAttribute('hidden')
+};
+bookList.addEventListener('click', showDescription);
 
+const hideDescription = e =>{
+    let target = e.target;
+    if(target.className != 'showLess') return;
+    target.parentElement.setAttribute('hidden','hidden');
+}
+bookList.addEventListener('click', hideDescription);

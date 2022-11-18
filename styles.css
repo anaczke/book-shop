@@ -12,7 +12,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    /* padding-top: 200px; */
     background-position-y: center;
     border-radius: 10px;
 }
@@ -48,7 +47,8 @@
     border:1px solid brown;
     border-radius: 10px;
     padding: 20px;
-   background-color:rgb(251, 244, 244); ;
+   background-color:rgb(251, 244, 244);
+   max-width: 50%;
 }
 .midTitle{
     margin-top: 0;
@@ -59,8 +59,8 @@
 }
 .book{
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    justify-content: flex-start;
+    gap: 40px;
     border:1px solid brown;
     border-radius: 10px;
     margin-bottom: 15px;
@@ -94,4 +94,41 @@
     font-size: 1em;
     font-style: normal;
     font-size: 0.7em;
+ }
+ button{
+    border:1px solid brown;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: 'Playfair Display', serif;
+    margin-right: 5px;
+    cursor: pointer;
+ }
+ button:hover{
+    scale: 110%;
+ }
+ .showMore{
+    color:brown;
+    background-color: rgb(251, 244, 244);
+ }
+ .addToCart{
+    background-color: brown;
+    color: rgb(251, 244, 244);
+ }
+ .description{
+    background-color: rgb(227, 208, 208);
+    border:1px solid brown;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 500px;
+    max-height: 200px;
+    transform: translate(-10px, -40px);
+    overflow: auto;
+ }
+ .description > p{
+    color:brown;
+    text-align: right;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
  }
