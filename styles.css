@@ -1,0 +1,52 @@
+#wrapper{
+    max-width: 1600px;
+    margin: 0 auto;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+}
+#header{
+    background-color:rgb(218, 157, 60);
+    height: 400px;
+    background-image: url(./assets/daniel-zjV8ptYgcEo-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 200px;
+    background-position-y: center;
+    border-radius: 10px;
+}
+#header>h1{
+    color:rgb(243, 235, 235);
+    text-align: center;
+    font-weight: 600;
+    font-size: 58px;
+    backdrop-filter: blur(3px);
+    background-color: brown;
+    padding: 20px;
+    margin: 0 300px;
+    border-radius: 20px;
+    font-style: italic;
+}
+#header>p{
+    color:rgb(243, 235, 235);
+    text-align: center;
+    font-size: 44px;
+    font-weight: 500;
+    backdrop-filter: blur(3px);
+    margin: 20px 500px;
+    border-radius: 20px;
+}
+#bookcatalog{
+    margin-top: 10px;
+    border:1px solid brown;
+    border-radius: 10px;
+    padding: 20px;
+   background-color:rgb(251, 244, 244); ;
+}
+.midTitle{
+    margin-top: 0;
+    color: brown;
+    font-size: 34px;
+    font-weight: 600;
+    font-style: italic;
+}
