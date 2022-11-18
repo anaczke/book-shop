@@ -21,7 +21,7 @@ catTitle.textContent = 'Book Catalogue';
 bookcatalog.append(catTitle);
 
 
-let books = document.createElement('ul');
+let books = document.createElement('div');
 books.setAttribute('id','bookList');
 bookcatalog.append(books);
 
@@ -31,20 +31,26 @@ fetch('./books.json')
         .then(response => {
             return response.json();
         })
-        // .then(data => {data.forEach( book => {
-        //      for (let key in book) {
-        //         console.log(`${key}: ${book[key]}`)
-        //      }})})
 
-        .then(data => {data?.forEach( book => {
 
-                for (let key in book) {
-                    let booka = document.createElement('li');
-                    booka.innerHTML = `${key}: ${book[key]}`;
-                    // console.log(booka)
-                    books.append(booka);
-                    }})});
+                    .then(data => {data?.forEach( book => {
+                        let booka = document.createElement('div');
 
+                            booka.innerHTML =
+                             `
+                            <img src= ${book.imageLink}>
+                            <br/>
+                             author: ${book.author}
+                             <br/>
+                              title: ${book.title}
+                              <br/>
+                              description: ${book.description}
+                              <br/>
+                              price: ${book.price} eur
+                              `;
+
+                            books.append(booka);
+                            })});
 
 
 
