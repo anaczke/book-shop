@@ -7,8 +7,8 @@ let welcome = document.createElement('p');
 welcome.textContent = "Welcome to";
 header.append(welcome);
 
-let title = document.createElement('h1');
-title.textContent = "Amazing Bookshop Online";
+let title = document.createElement('div');
+title.innerHTML = "<h1>Amazing Bookshop Online</h1>";
 header.append(title);
 
 let bookcatalog = document.createElement('div');
@@ -35,18 +35,18 @@ fetch('./books.json')
 
                     .then(data => {data?.forEach( book => {
                         let booka = document.createElement('div');
-
+                            booka.setAttribute('class','book');
                             booka.innerHTML =
                              `
-                            <img src= ${book.imageLink}>
-                            <br/>
-                             author: ${book.author}
-                             <br/>
-                              title: ${book.title}
-                              <br/>
-                              description: ${book.description}
-                              <br/>
-                              price: ${book.price} eur
+                            <div>
+                                 <img src= ${book.imageLink}>
+                            </div>
+                            <div>
+                                <p><span> author:</span> ${book.author}</p>
+                                <p><span>title:</span>  ${book.title}</p>
+                                <p><span>description:</span>  ${book.description}</p>
+                                <p><span>price:</span>  ${book.price} eur</p>
+                            </div>
                               `;
 
                             books.append(booka);
