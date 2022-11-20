@@ -1,0 +1,51 @@
+#formWrapper{
+    max-width: 600px;
+    margin: 50px auto;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+    border:1px solid brown;
+    border-radius: 10px;
+    padding: 30px;
+    background-color:rgb(251, 244, 244);
+}
+a{
+    font-family: 'Playfair Display', serif;
+    color: brown;
+    margin-left: 200px;
+}
+h2{
+    color: brown;
+    font-size: 34px;
+    font-weight: 600;
+    font-style: italic;
+    margin: 0 auto;
+}
+h2:nth-of-type(1){
+    margin-bottom: 10px;
+}
+#submit{
+    border:none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: 'Playfair Display', serif;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: brown;
+    color: rgb(251, 244, 244);
+    font-size: 20px;
+
+}
+#submit:hover{
+    scale: 110%;
+}
+.formDiv{
+    margin:15px auto;
+    max-width: 100%;
+}
+#name,
+#addressNumbers{
+display: flex;
+justify-content: space-between;
+gap:15px;
+}
+

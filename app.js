@@ -36,6 +36,7 @@ fetch('./books.json')
             return response.json();
         })
                     .then(data => {data?.forEach( book => {
+                        let fragment = document.createDocumentFragment();
                         let booka = document.createElement('div');
                             booka.setAttribute('class','book');
                             booka.innerHTML =
@@ -56,8 +57,10 @@ fetch('./books.json')
                             </div>
                               `;
 
-                            books.append(booka);
+                            fragment.append(booka);
+                            books.append(fragment);
                             })});
+
 
 const bookList = document.getElementById('bookList');
 
@@ -118,5 +121,6 @@ cart.addEventListener('click', delFromOrder);
 let confBtn = document.createElement('button');
 confBtn.textContent = 'Confirm Order';
 confBtn.setAttribute('id','confBtn');
+confBtn.innerHTML = '<a href="./deliveryForm.html">Confirm Order</a>'
 cart.append(confBtn);
 

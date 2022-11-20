@@ -160,10 +160,17 @@
     display: none;
 }
 #confBtn{
+    text-decoration: none;
     background-color: brown;
     color: rgb(251, 244, 244);
     font-size: 20px;
-    margin: 15px;
+ }
+ #confBtn>a {
+    text-decoration: none;
+    background-color: brown;
+    color: rgb(251, 244, 244);
+    font-size: 20px;
+    padding: 0;
  }
  .delFromOrder{
     height: 25px;
