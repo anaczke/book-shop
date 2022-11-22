@@ -31,7 +31,7 @@ bookcatalog.append(books);
 
 
 
-fetch('./books.json')
+fetch('../books.json')
         .then(response => {
             return response.json();
         })
@@ -121,6 +121,8 @@ cart.addEventListener('click', delFromOrder);
 let confBtn = document.createElement('button');
 confBtn.textContent = 'Confirm Order';
 confBtn.setAttribute('id','confBtn');
-confBtn.innerHTML = '<a href="./deliveryForm.html">Confirm Order</a>'
+confBtn.innerHTML = '<a href="./DeliveryForm/deliveryForm.html ">Confirm Order</a>'
 cart.append(confBtn);
+
+
 

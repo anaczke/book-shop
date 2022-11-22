@@ -1,6 +1,6 @@
 #formWrapper{
     max-width: 600px;
-    margin: 50px auto;
+    margin: 50px auto 10px auto;
     font-family: 'Playfair Display', serif;
     box-sizing: border-box;
     border:1px solid brown;
@@ -33,11 +33,16 @@ h2:nth-of-type(1){
     background-color: brown;
     color: rgb(251, 244, 244);
     font-size: 20px;
-
 }
 #submit:hover{
     scale: 110%;
 }
+#submit:disabled{
+    background-color: rgb(214, 112, 112);
+    cursor: not-allowed;
+    scale: none;
+}
+
 .formDiv{
     margin:15px auto;
     max-width: 100%;
@@ -49,3 +54,44 @@ justify-content: space-between;
 gap:15px;
 }
 
+#input :focus{
+  background-color: white;
+}
+input:valid{
+    border: 1px solid brown;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.error{
+    background-color: red;
+    border-radius: 5px;
+}
+.errorMsg{
+    color: red;
+    font-weight: 700;
+}
+#summary{
+    max-width: 600px;
+    margin: 10px auto;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+    border:1px solid brown;
+    border-radius: 10px;
+    padding: 30px;
+    background-color:rgb(251, 244, 244);
+}
+#summary>h4{
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: brown;
+    font-size: 34px;
+    font-weight: 600;
+    font-style: italic;
+}
+#summary>p{
+    font-size: 1.2em;
+}
+#summary>p>span{
+    font-weight: bold;
+}

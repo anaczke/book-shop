@@ -10,37 +10,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="./index.html">Back...</a>
+    <a href="../index.html">Back...</a>
     <div id="formWrapper">
         <h2>Shipping Details</h1>
-        <form  id="shippingDetails" action="#">
-            <div id="name" class="formDiv">
-            <label for="inputFirstName">Name</label>
-            <input type="text" id="inputFirstName" placeholder="Name" required>
+        <form  id="shippingDetails" action="/">
+            <div id="nameDiv" class="formDiv">
+            <label for="inputFirstName">Name*</label>
+            <input type="text" id="inputFirstName" placeholder="Name" required minlength="4">
+            <div class="errorMsg" hidden>Input your name. Not less then 4 chars with no spaces.</div>
 
-            <label for="inputSurname">Surname</label>
-            <input type="text" id="inputSurname" placeholder="Name" required>
+            <label for="inputSurname">Surname*</label>
+            <input type="text" id="inputSurname" placeholder="Surname" required minlength="5">
+            <div class="errorMsg" hidden>Input your surname. Not less then 5 chars with no spaces.</div>
         </div>
         <div id="deliveryDate" class="formDiv">
-            <label for="deliveryDate" >Delivery Date</label>
+            <label for="deliveryDate" >Delivery Date*</label>
             <input type="date" id="deliveryDate" required>
         </div>
 
         <h2>Address</h2>
 
-            <div id="street" class="formDiv">
-                <label for="street">Street</label>
-                <input type="text" id="street" placeholder="Street" required>
+            <div id="streetDiv" class="formDiv">
+                <label for="street">Street*</label>
+                <input type="text" id="street" placeholder="Street" required minlength="5">
+                <div class="errorMsg" hidden>Input your street name. Not less then 5 chars with no spaces.</div>
             </div>
             <div id="addressNumbers" class="formDiv">
-                <label for="houseNumber">House Number</label>
+                <label for="houseNumber">House Number*</label>
                 <input type="number" id="houseNumber" placeholder="House Number" required min="1">
 
-                <label for="flatNumber">Flat Number</label>
+                <label for="flatNumber">Flat Number*</label>
                 <input type="number" id="flatNumber" placeholder="Flat Number" required min="1">
             </div>
 
-        <h2>Payment Information</h2>
+        <h2>Payment Information*</h2>
 
             <div id="payment" class="formDiv">
             <input type="radio" id="card" name="payInfo" value="card" required>
@@ -65,9 +68,17 @@
             <label for="pencil"> branded pen or pencil</label><br>
             </div>
             <div id="submitDiv" class="formDiv">
-                <input type="submit" id="submit" value="Purchase">
+                <input type="submit" id="submit" value="Purchase" disabled>
             </div>
         </form>
-    </div>
+        </div>
+        <div id="summary" hidden>
+            <h4> The order created</h4>
+            <p>name: <span>John</span> </p>
+            <p>surname: <span>Gald</span> </p>
+            <p>Delivery date: <span>13.01.2023</span> </p>
+            <p>Delivery address: <span>Chirchtown, Amazing Str 3/10</span> </p>
+        </div>
+    <script src="./deliveryFormApp.js"></script>
 </body>
 </html>
